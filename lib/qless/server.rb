@@ -100,7 +100,7 @@ module Qless
       end
 
       def workers
-        client.workers.counts
+        client.workers.counts.sort! { |x,y| x['name'] <=> y['name'] }
       end
 
       def failed
