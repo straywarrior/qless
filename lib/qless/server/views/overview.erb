@@ -21,7 +21,7 @@
     </thead>
     <tbody>
     <% queues.each do |queue| %>
-    <tr class="queue-row">
+    <tr class="queue-row" id="queue-row-<%= queue['name']%>">
       <td class="queue-column large-text">
         <% if queue['paused'] %>
           <button
@@ -133,3 +133,4 @@
     </tbody>
   </table>
 <% end %>
+<script src="<%= u '/js/overview.js' %>"></script>
