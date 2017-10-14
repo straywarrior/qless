@@ -240,6 +240,11 @@ module Qless
       }
     end
 
+    # Returns a JSON blob with the job counts for various workers
+    get '/workers.json' do
+      json(client.workers.counts)
+    end
+
     get '/workers/?' do
       erb :workers, layout: true, locals: {
         title: 'Workers'
