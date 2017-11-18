@@ -123,7 +123,7 @@
       </tr>
     </thead>
     <tbody>
-    <% workers.each do |worker| %>
+    <% workers.sort { |x, y| x['name'] <=> y['name'] }.each do |worker| %>
     <tr class='worker-row'>
       <td class="large-text"><a href="<%= u "/workers/#{worker['name']}" %>"><%= worker['name'] %></a></td>
       <td><%= worker['jobs'] %></td>

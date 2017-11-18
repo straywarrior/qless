@@ -2,7 +2,7 @@
   <h1>Current Workers <small>And their job counts</small></h1>
 </div>
 
-<% workers.each do |worker| %>
+<% workers.sort { |x, y| x['name'] <=> y['name'] }.each do |worker| %>
 <div class="row">
   <div class="span4">
     <h3><a href="<%= u "/workers/#{worker['name']}" %>"><%= worker['name'] %></a></h3>
